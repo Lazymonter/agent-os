@@ -13,6 +13,7 @@ required = [
     '.agents/skills/ui-prototype-design/SKILL.md','agents/ROLE_INDEX.md',
     'registry/agent-registry.yaml','registry/engagement-rules.yaml','registry/skill-registry.yaml',
     'policies/human-decision-policy.md','policies/iteration-retention-policy.md',
+    'policies/task-intake-exit-gate-policy.md',
     'workflows/iteration-workflow.md','workflows/iteration-close-workflow.md',
     'workflows/ui-prototype-design-workflow.md','schemas/task-packet.schema.json'
 ]
@@ -29,4 +30,18 @@ for p in (root/'schemas').glob('*.json'):
     except Exception as e:
         print(f'Schema 不是有效 JSON: {p}: {e}')
         sys.exit(1)
-print('Agent OS 运行时中立版 v1.2 校验通过。')
+task_packet_template = (root/'templates/task-packet/task-packet.yaml.tpl').read_text(encoding='utf-8')
+required_task_packet_fields = [
+    'task_id', 'task_name', 'iteration_id', 'owner_agent', 'objective',
+    'source_artifacts', 'inputs', 'outputs', 'constraints', 'allowed_paths',
+    'forbidden_paths', 'forbidden_changes', 'acceptance_criteria',
+    'required_tests', 'human_approval_required'
+]
+missing_template_fields = [
+    field for field in required_task_packet_fields
+    if f'{field}:' not in task_packet_template
+]
+if missing_template_fields:
+    print('task-packet 模板缺失字段:', *missing_template_fields, sep='\n- ')
+    sys.exit(1)
+print('Agent OS 校验通过。')

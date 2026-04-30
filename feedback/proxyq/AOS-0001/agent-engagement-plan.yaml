@@ -1,0 +1,39 @@
+iteration_id: AOS-0001
+iteration_name: Agent OS 自我迭代：吸收 ProxyQ 通用学习
+classification:
+  primary_type: agent_os_maintenance
+  secondary_types:
+    - feedback_governance
+    - workflow_learning
+    - policy_learning
+    - template_learning
+    - rubric_learning
+impact:
+  product_scope: none
+  requirements: low
+  architecture: none
+  data_contract: medium
+  ui_ux: none
+  implementation: none
+  testing: medium
+  security: medium
+  release: medium
+  documentation: high
+selected_agents:
+  - agent: agent-os-maintainer
+    role: owner
+    reason: 负责通用 Agent OS 学习、policy、skill、workflow、template、rubric、changelog 和发布建议更新。
+  - agent: feedback-governance
+    role: gatekeeper
+    reason: 确保项目反馈经过分类和脱敏，只有可泛化学习进入 Agent OS。
+  - agent: qa-verification
+    role: reviewer
+    reason: 验证 Agent OS 结构校验、template/schema 一致性和验收证据。
+  - agent: security-risk
+    role: reviewer
+    reason: 确认没有凭据、完整私有代理 URL、token、私有日志或未脱敏项目过程内容进入 Agent OS。
+  - agent: release-documentation
+    role: reviewer
+    reason: 在人类批准前复核 changelog 和版本发布建议。
+human_decision_required:
+  - "从 Unreleased changelog 发布 Agent OS 版本前需要人类批准。"

@@ -16,6 +16,7 @@
 
 ## 流程
 
+0. 执行 `policies/task-intake-exit-gate-policy.md` 的 Intake Gate，确认迭代目录、Project Pack、相关 reviews、learning、保留/删除边界和人类决策点。
 1. 汇总本轮目标、实际完成内容和未完成内容。
 2. 将长期有价值的内容迁移到项目目录：
    - 需求 -> `docs/requirements/`
@@ -26,7 +27,8 @@
 3. 将通用化经验生成 Learning Proposal。
 4. 更新 `knowledge/iteration-ledger.md`。
 5. 生成 `iteration-close-report.md`。
-6. 人类确认后删除或外部归档该迭代目录。
+6. 执行 Exit Gate，确认保留内容、归档/删除清单、测试或审计证据和未决风险。
+7. 人类确认后删除或外部归档该迭代目录。
 
 ## 输出
 

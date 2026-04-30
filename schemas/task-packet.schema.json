@@ -8,10 +8,16 @@
     "iteration_id",
     "owner_agent",
     "objective",
+    "source_artifacts",
     "inputs",
     "outputs",
     "constraints",
-    "acceptance_criteria"
+    "allowed_paths",
+    "forbidden_paths",
+    "forbidden_changes",
+    "acceptance_criteria",
+    "required_tests",
+    "human_approval_required"
   ],
   "properties": {
     "task_id": {

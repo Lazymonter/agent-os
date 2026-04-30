@@ -14,6 +14,7 @@
 
 ## 标准步骤
 
+0. 执行 `policies/task-intake-exit-gate-policy.md` 的治理维护 Intake Gate。
 1. 接收学习提案。
 2. 隔离到 feedback/<project>/<learning-id> 或 PR。
 3. 脱敏检查。
@@ -21,9 +22,10 @@
 5. 提炼成通用规则。
 6. 修改 skill-pack、domain-pack、workflow、policy、template 或 rubric。
 7. 运行 Agent OS 校验和回归测试。
-8. 生成版本变更说明。
-9. 发布新版本。
-10. 删除临时反馈分支或过程内容。
+8. 执行 Exit Gate，确认脱敏、修改位置、校验和兼容性影响。
+9. 生成版本变更说明。
+10. 发布新版本。
+11. 删除临时反馈分支或过程内容。
 
 ## 不允许
 

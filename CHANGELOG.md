@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased
+
+- 暂无。
+
+## 1.3.0 - 2026-04-30
+
+- 新增 Task Intake / Exit Gate 规则，要求正式任务在修改文件前读取项目规则、Skill、Task Packet、Project Pack、相关 workflow/policy/rubric，并在结束前输出验收、测试、forbidden paths、secret scan、项目红线和人类决策状态。
+- 将 Intake / Exit Gate 接入 Agent OS Skill、任务执行流程、迭代流程、迭代关闭流程和项目 AGENTS 模板。
+- 强化 task-packet 模板和 schema，要求任务包显式包含 `iteration_id`、`objective`、`source_artifacts`、`allowed_paths`、`forbidden_paths`、`forbidden_changes`、`required_tests` 和 `human_approval_required`。
+- 更新实现、QA、契约、安全和发布 rubric，将 Intake / Exit Gate 证据纳入最低验收。
+- 更新 `verify_agent_os.py`，校验 task-packet 模板是否包含必需治理字段。
+
 ## 1.2.0
 
 - 修正运行时中立原则：不再为 Codex、Claude Code 等运行时建立专用目录。

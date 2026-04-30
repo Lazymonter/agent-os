@@ -61,6 +61,9 @@ baselined
 
 ## 标准步骤
 
+0. **执行 Intake Gate**  
+   对任何会生成或修改迭代工件的步骤，先执行 `policies/task-intake-exit-gate-policy.md`，读取项目规则、Project Pack、Skill、相关 workflow/policy/rubric，并记录允许修改范围。
+
 1. **创建目标**  
    在 `iterations/<iteration-id>/goal.yaml` 中记录目标、背景、约束、预期输出。
 
@@ -100,6 +103,9 @@ baselined
 
 13. **学习反馈**  
     迭代结束后，将项目专属学习写入项目仓库；可泛化学习通过 Learning Proposal 提交给 Agent OS。
+
+14. **执行 Exit Gate**  
+    关闭或交付阶段前，记录验收、测试、forbidden paths、secret scan、项目红线和人类决策状态。
 
 ## 输出工件
 

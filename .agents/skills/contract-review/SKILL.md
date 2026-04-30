@@ -15,12 +15,14 @@ description: 契约审查：检查 schema、API、JSON 输出和兼容性。
 
 ## 通用步骤
 
+0. 执行 `policies/task-intake-exit-gate-policy.md` 的 Intake Gate，并在首次修改文件前输出 Intake 记录。
 1. 读取项目或 Agent OS 的 `AGENTS.md`。
 2. 读取当前 Project Pack、Iteration Brief、Task Packet。
-3. 检查是否有明确输入和输出。
-4. 检查 forbidden changes、项目红线和人类决策点。
-5. 按本 Skill 的职责产出工件。
-6. 产出后说明修改文件、假设、风险和需要人类决策的事项。
+3. 读取本 Skill 对应的 workflow、policy 和 rubric。
+4. 检查是否有明确输入和输出。
+5. 检查 forbidden changes、项目红线和人类决策点。
+6. 按本 Skill 的职责产出工件。
+7. 执行 Exit Gate，并说明修改文件、假设、风险和需要人类决策的事项。
 
 ## 输出要求
 
