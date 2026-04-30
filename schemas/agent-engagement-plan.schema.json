@@ -37,84 +37,34 @@
       "type": "object",
       "properties": {
         "product_scope": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "requirements": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "architecture": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "data_contract": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "ui_ux": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "implementation": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "testing": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "security": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "release": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         },
         "documentation": {
-          "enum": [
-            "none",
-            "low",
-            "medium",
-            "high"
-          ]
+          "$ref": "#/$defs/impact_level"
         }
       }
     },
@@ -125,6 +75,7 @@
         "required": [
           "agent",
           "role",
+          "execution_mode",
           "reason"
         ],
         "properties": {
@@ -139,6 +90,9 @@
               "gatekeeper"
             ]
           },
+          "execution_mode": {
+            "$ref": "#/$defs/execution_mode"
+          },
           "reason": {
             "type": "string"
           }
@@ -150,6 +104,25 @@
       "items": {
         "type": "string"
       }
+    }
+  },
+  "$defs": {
+    "impact_level": {
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "execution_mode": {
+      "enum": [
+        "inline",
+        "isolated_task",
+        "isolated_worktree",
+        "independent_review",
+        "human_decision"
+      ]
     }
   },
   "additionalProperties": true

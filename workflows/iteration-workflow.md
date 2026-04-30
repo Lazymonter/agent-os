@@ -59,6 +59,25 @@ baselined
 | 验证 | QA & Verification | 验证测试、任务边界、验收标准和 golden files。 |
 | 决策 | 人类决策者 | 批准、驳回或要求返工。 |
 
+## 执行线程与实例化模式
+
+每轮迭代必须区分主线程、独立执行实例、独立评审实例和人类决策。执行模式定义见 `docs/agent-execution-threading-model.md`。
+
+| execution_mode | 说明 |
+|---|---|
+| `inline` | 主线程内完成，不创建独立实例。 |
+| `isolated_task` | 独立实例执行，可在同一工作区完成低风险局部任务。 |
+| `isolated_worktree` | 独立实例加独立 worktree 或 branch，默认用于代码实现。 |
+| `independent_review` | 独立评审实例，不参与实现。 |
+| `human_decision` | 人类决策，Agent 不得代替批准。 |
+
+默认规则：
+
+- 规划类角色默认 `inline`。
+- 实现类角色默认 `isolated_worktree`。
+- QA、Security、Contract 和 UX Review 默认 `independent_review`。
+- 范围变化、架构重大变更、破坏性 schema 变更、安全风险接受和发布批准必须进入 `human_decision`。
+
 ## 标准步骤
 
 0. **执行 Intake Gate**  
@@ -81,7 +100,7 @@ baselined
    `product_scope`、`requirements`、`architecture`、`data_contract`、`ui_ux`、`implementation`、`testing`、`security`、`release`、`documentation`。
 
 5. **Agent 介入判断**  
-   使用 `registry/engagement-rules.yaml` 生成 `agent-engagement-plan.yaml`。
+   使用 `registry/engagement-rules.yaml` 生成 `agent-engagement-plan.yaml`。每个 `selected_agents[]` 条目必须声明 `execution_mode`，并说明是否由主线程、独立执行实例、独立评审实例或人类决策承担。
 
 6. **需求和验收标准**  
    Product & Requirements 生成 `requirements.md`、`acceptance-criteria.md` 或相应片段。
@@ -93,14 +112,14 @@ baselined
    Architect 生成 `architecture/design.md`、`task-decomposition.md`、`dependency-graph.md`。
 
 9. **生成任务包**  
-   在 `task-packets/` 下生成每个可执行任务。每个任务包必须包含 allowed changes、forbidden changes、输入、输出、测试要求。
+   在 `task-packets/` 下生成每个可执行任务。每个任务包必须包含 `execution` 块、allowed changes、forbidden changes、输入、输出、测试要求。代码实现任务默认使用 `execution.mode: isolated_worktree`；评审任务默认使用 `execution.mode: independent_review`。
 
 10. **执行任务**  
-    Implementation 只执行任务包授权范围。若需要越权修改，必须停下并生成 Decision Pack。
+    Implementation 只执行任务包授权范围，并遵守 Task Packet 的 `execution.mode`、branch、worktree、allowed paths 和 forbidden paths。若需要越权修改，必须停下并生成 Decision Pack。
     如果当前迭代 prompt 明确限定为需求、架构、契约、评审或发布准备，执行由本轮生成的实现类 Task Packet 前必须确认该执行仍被当前用户请求授权；不得因为 task packets 已存在就无限延展迭代阶段。
 
 11. **验证和审查**  
-    QA 检查测试、约束、输出、golden files。Security / Contract / UX 按介入计划审查。
+    QA 检查测试、约束、输出、golden files。Security / Contract / UX 按介入计划审查。QA、Security、Contract 和 UX Review 的最终结论必须由独立评审实例或明确的人类决策给出，不能由实现实例自证正确。
 
 12. **生成决策包**  
     Supervisor 汇总结果、风险、未决问题和建议，提交人类决策。

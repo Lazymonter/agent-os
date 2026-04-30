@@ -7,6 +7,7 @@
     "task_name",
     "iteration_id",
     "owner_agent",
+    "execution",
     "objective",
     "source_artifacts",
     "inputs",
@@ -41,6 +42,41 @@
       "items": {
         "type": "string"
       }
+    },
+    "execution": {
+      "type": "object",
+      "required": [
+        "mode",
+        "owner_agent",
+        "reviewer_agents",
+        "human_approval_required"
+      ],
+      "properties": {
+        "mode": {
+          "$ref": "#/$defs/execution_mode"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "worktree": {
+          "type": "string"
+        },
+        "owner_agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "human_approval_required": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "additionalProperties": true
     },
     "objective": {
       "type": "string",
@@ -104,6 +140,17 @@
       "items": {
         "type": "string"
       }
+    }
+  },
+  "$defs": {
+    "execution_mode": {
+      "enum": [
+        "inline",
+        "isolated_task",
+        "isolated_worktree",
+        "independent_review",
+        "human_decision"
+      ]
     }
   },
   "additionalProperties": true

@@ -1,4 +1,4 @@
-# Agent OS Runtime Neutral v1.2 中文版
+# Agent OS Runtime Neutral v1.4 中文版
 
 Agent OS 是一套**运行时中立**的 AI Agent 软件工程操作系统。它不绑定 Codex、Claude Code 或任何特定 Agent Runtime；任何能够读取仓库文件、执行脚本、修改代码、运行测试的 Agent Runtime，都可以按同一套规则使用。
 
@@ -23,6 +23,7 @@ Agent OS 是一套**运行时中立**的 AI Agent 软件工程操作系统。它
 4. `examples/proxyq/` 提供完整示例，包括初始化、需求迭代、开发迭代和 Agent OS 自我迭代。
 5. 新增 UI 原型设计产出机制，确保设计稿能给人类评审。
 6. 新增迭代关闭机制，防止 `iterations/` 文件爆炸。
+7. 新增 Agent 执行线程与实例化模式，要求 Agent Engagement Plan 和 Task Packet 显式声明执行模式。
 
 ## 快速使用
 

@@ -12,6 +12,7 @@
 - 新增 Agent OS 自我迭代示例。
 - 新增 UI 原型设计产出 Skill。
 - 新增迭代关闭和文件膨胀控制机制。
+- 新增 Agent 执行线程与实例化模式，明确 inline、isolated_task、isolated_worktree、independent_review 和 human_decision。
 
 ## 仍建议在真实项目中补充
 

@@ -4,6 +4,14 @@
 
 - 暂无。
 
+## 1.4.0 - 2026-04-30
+
+- 新增 Agent 执行线程与实例化模式文档，明确主线程、角色视角、独立执行实例、独立评审实例和人类决策的边界。
+- 扩展 Agent Engagement Plan schema 和模板，要求每个参与 Agent 声明 `execution_mode`。
+- 扩展 Task Packet schema 和模板，要求任务包声明 `execution` 块，覆盖执行模式、owner、reviewer、worktree / branch 约束和人类批准状态。
+- 更新迭代流程、Agent 介入判断流程和任务执行流程，固化实现默认隔离、评审默认独立、人类决策不可由 Agent 替代的规则。
+- 更新 Agent OS 校验脚本，检查执行线程模型文档、Agent Engagement Plan 模板和 Task Packet execution 字段。
+
 ## 1.3.1 - 2026-04-30
 
 - 明确项目存在外部执行手册、prompt registry 或迭代序列时，Agent 必须将其作为源资产读取并遵守，不得自行发明、跳转或跳过迭代。
