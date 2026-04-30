@@ -1,0 +1,43 @@
+iteration_id: I-0001-config-validate
+goal:
+  title: 定义并拆解 config schema、配置加载和 validate 命令
+  description: >
+    本轮目标是基于 ProxyQ 产品说明、评审版原型、CLI 原型、Desktop / iOS 原型和设计系统，定义 config schema、配置加载和 validate 命令的需求、契约、任务拆解和测试要求。
+    本轮不要求完整实现 Desktop 或 iOS UI，但必须保证配置字段、CLI 输出和后续 UI 设置页保持一致。
+
+source_artifacts_required:
+  - proxyq-product-doc-pdf
+  - proxyq-review-deck-pdf
+  - proxyq-cli-prototype
+  - proxyq-desktop-prototype
+  - proxyq-ios-prototype
+  - proxyq-design-system
+
+constraints:
+  - 不得扩大一期范围。
+  - 不得把 Windows、Linux、Android、云端 SaaS 纳入一期。
+  - throughput 默认关闭。
+  - full_speed 必须 manual-only 且强确认。
+  - global_proxy 未确认时不得输出代理质量等级。
+  - direct baseline 未确认时不得计算 comparative_proxy_score。
+  - 不得把代理密码同步到 iOS。
+
+expected_outputs:
+  - iteration-brief.md
+  - agent-engagement-plan.yaml
+  - requirements.md
+  - acceptance-criteria.md
+  - source-artifact-trace.md
+  - contracts/config-schema-impact.md
+  - architecture/task-decomposition.md
+  - task-packets/T-001-config-schema.yaml
+  - task-packets/T-002-config-loader.yaml
+  - task-packets/T-003-config-validator.yaml
+  - task-packets/T-004-cli-validate-output.yaml
+  - task-packets/T-005-config-tests.yaml
+  - decision-pack.md
+
+human_decision_needed:
+  - 配置文件是否允许保存明文代理密码，还是必须使用 Keychain 引用。
+  - Desktop / iOS 是否复用同一 config schema。
+  - direct baseline 无效时默认 fallback 是 path_only 还是 baseline_invalid。

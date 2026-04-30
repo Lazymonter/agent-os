@@ -1,0 +1,40 @@
+skills:
+  - name: project-bootstrap
+    path: .agents/skills/project-bootstrap
+    description: 初始化项目结构、Project Pack、源资产登记和首轮初始化迭代。
+  - name: iteration-start
+    path: .agents/skills/iteration-start
+    description: 创建迭代目录、goal、brief、源资产追踪和初始状态。
+  - name: agent-engagement
+    path: .agents/skills/agent-engagement
+    description: 根据目标分类和影响分析判断需要哪些 Agent 介入。
+  - name: task-decomposition
+    path: .agents/skills/task-decomposition
+    description: 将需求和架构拆成可执行 Task Packet。
+  - name: task-execution
+    path: .agents/skills/task-execution
+    description: 按 Task Packet 最小化执行代码、文档或设计任务。
+  - name: qa-verification
+    path: .agents/skills/qa-verification
+    description: 验证任务输出、测试、golden files 和验收标准。
+  - name: security-review
+    path: .agents/skills/security-review
+    description: 审查安全、隐私、权限和高风险操作。
+  - name: contract-review
+    path: .agents/skills/contract-review
+    description: 审查 schema、API、数据模型和兼容性。
+  - name: feedback-governance
+    path: .agents/skills/feedback-governance
+    description: 分类学习反馈，决定进入项目知识还是 Agent OS。
+  - name: agent-os-maintenance
+    path: .agents/skills/agent-os-maintenance
+    description: 维护 Agent OS 通用知识、提炼跨项目反馈。
+  - name: release-prep
+    path: .agents/skills/release-prep
+    description: 准备发布文档、检查清单和交付物。
+  - name: iteration-close
+    path: .agents/skills/iteration-close
+    description: 关闭迭代、沉淀知识并控制 iterations 文件膨胀。
+  - name: ui-prototype-design
+    path: .agents/skills/ui-prototype-design
+    description: 产出人类可评审的 UI 原型图和设计稿。

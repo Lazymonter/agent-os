@@ -1,0 +1,18 @@
+iteration_id: I-0001-requirements-config-validate
+goal: >
+  基于 ProxyQ 产品说明、CLI 原型、Desktop 设置页和 iOS 状态展示，完成 config schema、配置加载和 validate 命令的需求定义、验收标准和任务拆解输入。
+
+required_source_assets:
+  - proxyq-product-doc
+  - proxyq-review-prototype
+  - proxyq-cli-prototype
+  - proxyq-desktop-prototype
+  - proxyq-ios-prototype
+
+expected_outputs:
+  - requirements.md
+  - acceptance-criteria.md
+  - source-artifact-trace.md
+  - agent-engagement-plan.yaml
+  - architecture/config-validation-scope.md
+  - decision-pack.md

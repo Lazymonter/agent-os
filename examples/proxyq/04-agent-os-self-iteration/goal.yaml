@@ -1,0 +1,13 @@
+iteration_id: AO-0001-improve-task-packet-template
+goal: >
+  基于 ProxyQ 项目第一轮迭代反馈，改进 Agent OS 的 task-packet 模板，增加 source_artifacts、allowed_paths、forbidden_paths 和 human_approval_required 的必填或强建议字段。
+
+source_learning:
+  - proxyq/knowledge/learning-proposals/LP-0001.yaml
+
+expected_outputs:
+  - distilled-learning.md
+  - templates/task-packet/task-packet.yaml.tpl 更新
+  - schemas/task-packet.schema.json 更新
+  - CHANGELOG.md 更新
+  - release-note.md

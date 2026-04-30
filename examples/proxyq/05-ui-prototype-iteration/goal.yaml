@@ -1,0 +1,15 @@
+iteration_id: I-0003-ui-settings-prototype
+goal: >
+  基于 ProxyQ config validate 需求，产出 Desktop Settings、Throughput、Baseline 和 iOS 状态展示的可评审 UI 原型与设计稿。
+
+required_source_assets:
+  - proxyq-review-prototype
+  - proxyq-design-system
+  - config-validate-requirements
+
+expected_outputs:
+  - docs/design/prototype/I-0003-ui-settings-prototype/prototype.html
+  - docs/design/prototype/I-0003-ui-settings-prototype/design-system.html
+  - docs/design/prototype/I-0003-ui-settings-prototype/review-deck.html
+  - docs/design/prototype/I-0003-ui-settings-prototype/screenshots/
+  - docs/design/prototype/I-0003-ui-settings-prototype/README.md

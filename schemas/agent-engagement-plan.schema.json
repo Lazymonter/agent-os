@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Engagement Plan",
+  "type": "object",
+  "required": [
+    "iteration_id",
+    "goal_title",
+    "classification",
+    "impact",
+    "selected_agents"
+  ],
+  "properties": {
+    "iteration_id": {
+      "type": "string"
+    },
+    "goal_title": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "primary_type"
+      ],
+      "properties": {
+        "primary_type": {
+          "type": "string"
+        },
+        "secondary_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "impact": {
+      "type": "object",
+      "properties": {
+        "product_scope": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "requirements": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "architecture": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "data_contract": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "ui_ux": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "implementation": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "testing": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "security": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "release": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "documentation": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "selected_agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "agent",
+          "role",
+          "reason"
+        ],
+        "properties": {
+          "agent": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "owner",
+              "reviewer",
+              "consultant",
+              "gatekeeper"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "human_decision_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

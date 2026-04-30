@@ -1,0 +1,10 @@
+task_id: {{task_id}}
+task_name: {{task_name}}
+owner_agent: implementation
+inputs: []
+outputs: []
+constraints: []
+forbidden_changes: []
+acceptance_criteria: []
+review_agents: []
+human_approval_required: false

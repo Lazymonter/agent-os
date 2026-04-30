@@ -1,0 +1,21 @@
+rules:
+  - id: implementation_requires_architecture_and_qa
+    when:
+      primary_type: implementation
+    require: [solution-architect-task-planner, implementation, qa-verification]
+  - id: data_contract_requires_contract_review
+    when:
+      data_contract: high
+    require: [contract-data-model, qa-verification]
+  - id: security_requires_security_review
+    when:
+      security: high
+    require: [security-risk, qa-verification]
+  - id: ui_requires_ux
+    when:
+      ui_ux: high
+    require: [ux-ui-design, product-requirements]
+  - id: release_requires_release_qa_security
+    when:
+      primary_type: release
+    require: [release-documentation, qa-verification, security-risk]

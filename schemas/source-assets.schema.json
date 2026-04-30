@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source Assets",
+  "type": "object",
+  "required": [
+    "assets"
+  ],
+  "properties": {
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "path_or_uri",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "product_doc",
+              "prototype_package",
+              "review_deck",
+              "html_prototype",
+              "design_system",
+              "screenshot",
+              "pdf",
+              "doc",
+              "other"
+            ]
+          },
+          "path_or_uri": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "approved",
+              "superseded",
+              "missing"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

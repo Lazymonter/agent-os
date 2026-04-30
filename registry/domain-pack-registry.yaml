@@ -1,0 +1,11 @@
+domain_packs:
+  apple-native-app:
+    description: "Apple 原生应用、macOS Agent、iOS App 和 Shared Core 项目的领域知识。"
+  cli-tool:
+    description: "CLI 工具的命令、输出、错误码和脚本友好设计。"
+  local-file-observability:
+    description: "本地文件、JSONL、原子写、归档、清理和观测数据持久化。"
+  network-proxy-observability:
+    description: "代理质量评估、路径评估、baseline、低流量探测和吞吐保护。"
+  agent-runtime-neutral:
+    description: "运行时中立 Agent 使用方式，不绑定任何单一 AI Agent 工具。"

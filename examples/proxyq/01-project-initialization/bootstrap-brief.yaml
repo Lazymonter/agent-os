@@ -1,0 +1,48 @@
+project:
+  name: ProxyQ
+  type: apple_native_shared_core_product
+
+goal: >
+  构建一个低流量、本地文件、支持 CLI、macOS Desktop、macOS Agent、iOS Mobile 的代理质量评估工具。
+
+phase_1_scope:
+  platforms:
+    - macos
+    - ios
+  clients:
+    - cli
+    - desktop_app
+    - agent
+    - mobile_app
+
+technical_route:
+  - Apple-native UI
+  - Shared Core
+  - local file storage
+
+requires:
+  ui_design: true
+  cli: true
+  mobile: true
+  agent: true
+  data_contract: true
+  security_review: true
+  local_file_storage: true
+  network_probe: true
+
+source_assets:
+  - id: proxyq-product-doc
+    type: product_doc
+    path_or_uri: artifacts/ProxyQ_产品说明文档_Apple_native_UI_Shared_Core.pdf
+    status: approved
+  - id: proxyq-review-prototype
+    type: prototype_package
+    path_or_uri: artifacts/ProxyQ_Review_Prototype_Apple_Native.zip
+    status: approved
+
+out_of_scope:
+  - windows
+  - linux
+  - android
+  - cloud_saas
+  - team_edition

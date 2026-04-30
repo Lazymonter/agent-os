@@ -1,0 +1,21 @@
+agents:
+  workflow-supervisor:
+    capabilities: [goal_intake, engagement_decision, artifact_check, decision_pack]
+  product-requirements:
+    capabilities: [goal_classification, requirements, acceptance_criteria]
+  solution-architect-task-planner:
+    capabilities: [architecture, task_decomposition, dependency_graph]
+  implementation:
+    capabilities: [code_change, minimal_implementation, unit_tests]
+  qa-verification:
+    capabilities: [test_plan, verification, golden_check, regression]
+  ux-ui-design:
+    capabilities: [interaction_flow, ui_state, design_system]
+  contract-data-model:
+    capabilities: [schema, api_contract, compatibility]
+  security-risk:
+    capabilities: [threat_model, sensitive_data, permission_review]
+  release-documentation:
+    capabilities: [docs, release_notes, release_checklist]
+  agent-os-maintainer:
+    capabilities: [learning_triage, distillation, agent_os_release]

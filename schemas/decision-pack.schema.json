@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision Pack",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "title",
+    "context",
+    "options",
+    "recommended_option",
+    "questions"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "context": {
+      "type": "string"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "option",
+          "pros",
+          "cons"
+        ],
+        "properties": {
+          "option": {
+            "type": "string"
+          },
+          "pros": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cons": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "recommended_option": {
+      "type": "string"
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_approval_required": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "additionalProperties": true
+}

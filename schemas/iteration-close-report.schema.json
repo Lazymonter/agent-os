@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Iteration Close Report",
+  "type": "object",
+  "required": [
+    "iteration_id",
+    "status",
+    "retained_outputs",
+    "project_learning",
+    "agent_os_learning",
+    "delete_iteration_dir_allowed"
+  ],
+  "properties": {
+    "iteration_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "closed",
+        "blocked",
+        "rework_required"
+      ]
+    },
+    "retained_outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "project_learning": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "agent_os_learning": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "archive_path": {
+      "type": "string"
+    },
+    "delete_iteration_dir_allowed": {
+      "type": "boolean"
+    },
+    "human_approval_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

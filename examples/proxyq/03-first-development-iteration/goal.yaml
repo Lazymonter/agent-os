@@ -1,0 +1,17 @@
+iteration_id: I-0002-dev-config-validate
+goal: >
+  实现 config schema、配置加载器、配置校验器和 validate 命令的最小可运行版本，并补充自动化测试。
+
+inputs:
+  - docs/requirements/config-validate-requirements.md
+  - schemas/config.schema.json
+  - iterations/I-0001-requirements-config-validate/acceptance-criteria.md
+
+expected_outputs:
+  - src/core/config_loader
+  - src/core/config_validator
+  - src/cli/validate_command
+  - tests/unit/config_validator_tests
+  - tests/cli/validate_output_snapshot
+  - reviews/qa-review.md
+  - decision-pack.md

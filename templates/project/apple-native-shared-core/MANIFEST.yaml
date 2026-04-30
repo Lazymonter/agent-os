@@ -1,0 +1,12 @@
+template_id: apple-native-shared-core
+description: Apple 原生 UI + Shared Core 项目模板
+creates:
+  - src/core
+  - src/cli
+  - src/agent
+  - src/desktop
+  - src/ios
+recommended_domain_packs:
+  - apple-native-app
+  - cli-tool
+  - local-file-observability

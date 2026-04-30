@@ -1,0 +1,12 @@
+template_id: runtime-neutral-base
+description: 运行时中立项目模板
+creates:
+  - AGENTS.md
+  - .agent/agent-config.yaml
+  - .agent/agent-os.lock
+  - knowledge/project-pack
+  - iterations
+  - docs
+  - src
+  - tests
+  - golden

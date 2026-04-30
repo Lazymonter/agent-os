@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Learning Proposal",
+  "type": "object",
+  "required": [
+    "learning_id",
+    "source_project",
+    "source_iteration",
+    "summary",
+    "classification_suggestion",
+    "proposed_rule"
+  ],
+  "properties": {
+    "learning_id": {
+      "type": "string"
+    },
+    "source_project": {
+      "type": "string"
+    },
+    "source_iteration": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "classification_suggestion": {
+      "enum": [
+        "project_only",
+        "agent_skill",
+        "domain_generic",
+        "workflow",
+        "policy",
+        "template",
+        "do_not_learn"
+      ]
+    },
+    "proposed_rule": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sensitivity": {
+      "type": "object",
+      "properties": {
+        "contains_credentials": {
+          "type": "boolean"
+        },
+        "contains_private_code": {
+          "type": "boolean"
+        },
+        "redacted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "target_repo": {
+      "enum": [
+        "project",
+        "agent-os",
+        "none"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

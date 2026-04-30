@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Iteration Brief",
+  "type": "object",
+  "required": [
+    "iteration_id",
+    "goal",
+    "scope",
+    "expected_outputs",
+    "status"
+  ],
+  "properties": {
+    "iteration_id": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "out_of_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "specified",
+        "designed",
+        "decomposed",
+        "assigned",
+        "implemented",
+        "verified",
+        "reviewed",
+        "human_decision_required",
+        "approved",
+        "baselined",
+        "closed"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
