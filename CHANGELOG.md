@@ -4,6 +4,11 @@
 
 - 暂无。
 
+## 1.3.1 - 2026-04-30
+
+- 明确项目存在外部执行手册、prompt registry 或迭代序列时，Agent 必须将其作为源资产读取并遵守，不得自行发明、跳转或跳过迭代。
+- 明确当前迭代生成的 Task Packet 不等于无限执行授权；当迭代 prompt 限定为需求、架构、契约、评审或发布准备时，继续执行实现类任务必须得到当前用户请求授权。
+
 ## 1.3.0 - 2026-04-30
 
 - 新增 Task Intake / Exit Gate 规则，要求正式任务在修改文件前读取项目规则、Skill、Task Packet、Project Pack、相关 workflow/policy/rubric，并在结束前输出验收、测试、forbidden paths、secret scan、项目红线和人类决策状态。

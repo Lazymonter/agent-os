@@ -64,6 +64,9 @@ baselined
 0. **执行 Intake Gate**  
    对任何会生成或修改迭代工件的步骤，先执行 `policies/task-intake-exit-gate-policy.md`，读取项目规则、Project Pack、Skill、相关 workflow/policy/rubric，并记录允许修改范围。
 
+0.1. **确认迭代来源**  
+   如果项目维护了外部执行手册、prompt registry、路线图或其他明确的迭代序列，Agent 必须把它作为源资产读取并遵守。不得自行发明新的迭代 ID、跳过规定的迭代后置步骤，或在用户未指定来源的情况下建议开启下一个迭代。
+
 1. **创建目标**  
    在 `iterations/<iteration-id>/goal.yaml` 中记录目标、背景、约束、预期输出。
 
@@ -94,6 +97,7 @@ baselined
 
 10. **执行任务**  
     Implementation 只执行任务包授权范围。若需要越权修改，必须停下并生成 Decision Pack。
+    如果当前迭代 prompt 明确限定为需求、架构、契约、评审或发布准备，执行由本轮生成的实现类 Task Packet 前必须确认该执行仍被当前用户请求授权；不得因为 task packets 已存在就无限延展迭代阶段。
 
 11. **验证和审查**  
     QA 检查测试、约束、输出、golden files。Security / Contract / UX 按介入计划审查。

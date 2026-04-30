@@ -1,0 +1,36 @@
+iteration_id: AOS-0001
+source_iteration_id: I-0002-architecture-data-contract-baseline
+iteration_name: Agent OS 自我迭代：吸收 I-0002 后通用学习
+classification:
+  primary_type: agent_os_maintenance
+  secondary_types:
+    - feedback_governance
+    - workflow_learning
+    - policy_learning
+    - template_learning
+impact:
+  product_scope: none
+  requirements: low
+  architecture: none
+  data_contract: none
+  ui_ux: none
+  implementation: none
+  testing: low
+  security: medium
+  release: low
+  documentation: medium
+selected_agents:
+  - agent: agent-os-maintainer
+    role: owner
+    reason: 负责将可泛化的迭代来源和任务包授权边界规则写入 Agent OS 通用 workflow、policy、template 和 changelog。
+  - agent: feedback-governance
+    role: gatekeeper
+    reason: 确认仅吸收通用流程学习，不吸收 ProxyQ 产品、路径、schema 或业务实现细节。
+  - agent: qa-verification
+    role: reviewer
+    reason: 验证 Agent OS 自检、敏感信息扫描和修改范围。
+  - agent: security-risk
+    role: reviewer
+    reason: 复核没有凭据、token、完整私有代理 URL、私有路径或项目过程日志进入通用主干。
+human_decision_required:
+  - "是否将 Unreleased 发布为 Agent OS 后续版本需要人类批准。"

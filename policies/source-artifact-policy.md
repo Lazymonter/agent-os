@@ -14,6 +14,7 @@
 - Mobile 原型。
 - 评审 PDF。
 - 关键截图。
+- 项目执行手册、prompt registry、路线图或明确的迭代序列。
 
 ## 项目侧要求
 
@@ -34,3 +35,4 @@ iterations/<id>/source-artifact-trace.md
 - 不能只根据口头目标实现 UI 或配置。
 - 若源资产影响需求或设计，必须在 trace 中说明。
 - 若源资产缺失，必须标记为风险。
+- 若项目存在明确的执行手册或 prompt registry，迭代启动和迭代后置步骤必须追踪到该来源；Agent 不得仅根据上一轮产物自行推断下一个迭代。
