@@ -1,0 +1,43 @@
+iteration_id: AOS-0001
+source_iteration_id: I-0003
+iteration_name: Agent OS 自我迭代：吸收 I-0003 后通用学习
+classification:
+  primary_type: agent_os_maintenance
+  secondary_types:
+    - feedback_governance
+    - qa_verification
+    - do_not_learn
+impact:
+  product_scope: none
+  requirements: none
+  architecture: none
+  data_contract: none
+  ui_ux: none
+  implementation: none
+  testing: low
+  security: low
+  release: none
+  documentation: low
+selected_agents:
+  - agent: feedback-governance
+    role: owner
+    execution_mode: inline
+    reason: 判断 I-0003 反馈是否可泛化，确保项目专属配置语义不进入 Agent OS 通用规则。
+  - agent: agent-os-maintainer
+    role: reviewer
+    execution_mode: inline
+    reason: 复核是否需要修改 Agent OS workflow、policy、template、schema 或 changelog。
+  - agent: qa-verification
+    role: gatekeeper
+    execution_mode: independent_review
+    reason: 验证反馈文件、敏感信息扫描和 Agent OS 自检结论。
+  - agent: security-risk
+    role: reviewer
+    execution_mode: independent_review
+    reason: 复核没有凭据、token、完整代理 URL 或未脱敏日志进入 Agent OS。
+not_selected_agents:
+  - agent: implementation
+    reason: 本轮不修改 Agent OS 核心实现或项目代码。
+  - agent: release-documentation
+    reason: 本轮不建议发布 Agent OS 新版本。
+human_decision_required: []
