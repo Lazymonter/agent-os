@@ -1,0 +1,51 @@
+iteration_id: AOS-0001
+source_iteration_id: I-0004
+iteration_name: Agent OS 自我迭代：吸收 I-0004 后通用学习
+classification:
+  primary_type: agent_os_maintenance
+  secondary_types:
+    - feedback_governance
+    - qa_verification
+    - do_not_learn
+impact:
+  product_scope: none
+  requirements: none
+  architecture: none
+  data_contract: none
+  ui_ux: none
+  implementation: none
+  testing: low
+  security: low
+  release: none
+  documentation: low
+selected_agents:
+  - agent: feedback-governance
+    role: owner
+    execution_mode: inline
+    reason: 判断 I-0004 的 CLI golden、输出契约和脱敏验证经验是否可泛化。
+  - agent: agent-os-maintainer
+    role: reviewer
+    execution_mode: inline
+    reason: 复核是否需要修改 Agent OS workflow、policy、rubric、template 或 changelog。
+  - agent: qa-verification
+    role: gatekeeper
+    execution_mode: independent_review
+    reason: 验证反馈文件、敏感信息扫描和 Agent OS 自检结论。
+  - agent: security-risk
+    role: reviewer
+    execution_mode: independent_review
+    reason: 复核没有凭据、私有日志或完整私有代理地址进入 Agent OS。
+not_selected_agents:
+  - agent: product
+    reason: 本轮不调整产品范围或用户需求。
+  - agent: architect
+    reason: 本轮不调整架构基线。
+  - agent: contract
+    reason: ProxyQ validate 输出契约属于项目仓库，不进入 Agent OS。
+  - agent: ux
+    reason: 本轮不涉及 UI 或交互原型。
+  - agent: implementation
+    reason: 本轮不修改 Agent OS 实现代码或项目业务代码。
+  - agent: release-documentation
+    reason: 本轮不建议发布 Agent OS 新版本。
+human_decision_required: []
