@@ -1,0 +1,34 @@
+iteration_id: AOS-0001-after-I-0007
+source_project: ProxyQ
+source_iteration: I-0007
+classification:
+  primary_type: agent_os_feedback
+  secondary_types:
+    - feedback_governance
+    - qa_verification
+    - policy_review
+impact:
+  product_scope: none
+  requirements: low
+  architecture: none
+  data_contract: none
+  ui_ux: none
+  implementation: none
+  testing: low
+  security: low
+  release: none
+  documentation: low
+selected_agents:
+  - agent: feedback-governance
+    role: owner
+    execution_mode: inline
+    reason: "对 ProxyQ I-0007 的执行经验进行分类、脱敏和路由。"
+  - agent: agent-os-maintenance
+    role: reviewer
+    execution_mode: inline
+    reason: "判断是否需要进入 Agent OS 主规则或版本发布。"
+  - agent: qa-verification
+    role: reviewer
+    execution_mode: inline
+    reason: "验证反馈文件、敏感信息扫描和 Agent OS 校验。"
+human_decision_required: []
